@@ -1,9 +1,10 @@
-package com.nus.National_University_of_Skill_Backend.entity
+package com.nus.National_University_of_Skill_Backend.model.entity
 
 import jakarta.persistence.*
+import java.time.LocalDateTime
 
 @Entity
-data class Lesson(
+data class Teacher(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
 
@@ -13,6 +14,10 @@ data class Lesson(
     @Column
     val field: String? = null,
 
-    @OneToMany(mappedBy = "lesson", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+    val contactInfo: String? = null,
+
+    val createdAt: LocalDateTime = LocalDateTime.now(),
+
+    @OneToMany(mappedBy = "teacher", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val teacherLessonDetails: MutableList<TeacherLessonDetail> = mutableListOf()
 )

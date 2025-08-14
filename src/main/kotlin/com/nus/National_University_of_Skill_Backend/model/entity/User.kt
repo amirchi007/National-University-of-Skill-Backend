@@ -1,4 +1,4 @@
-package com.nus.National_University_of_Skill_Backend.entity
+package com.nus.National_University_of_Skill_Backend.model.entity
 
 import jakarta.persistence.*
 import java.time.LocalDateTime

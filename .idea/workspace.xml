@@ -4,15 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf7ee19a-09db-4383-bda5-d26f1f6162a6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/checksums/checksums.lock" afterDir="false" />
+    <list default="true" id="bf7ee19a-09db-4383-bda5-d26f1f6162a6" name="Changes" comment="feat(web): implement all controllers for core functionality&#10;- Added and completed all controller classes&#10;- Connected controllers with corresponding services&#10;- Prepares the backend for API integration and testing">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/LessonRequestDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/LessonResponseDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/Mapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/ReviewRequestDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/ReviewResponseDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherLessonDetailRequestDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherLessonDetailResponseDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherRequestDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherResponseDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/UserRequestDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/UserResponseDto.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/controller/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/controller/UserController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/entity/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/entity/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/repository/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/repository/UserRepository.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +33,33 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="National-University-of-Skill-Backend" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,6 +76,9 @@
     &quot;accountId&quot;: &quot;191e882c-3720-4cfd-88ab-a400d0f58f29&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Security Analysis" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -114,10 +154,62 @@
       <workItem from="1755201160197" duration="122000" />
       <workItem from="1755201285218" duration="1610000" />
       <workItem from="1755202940065" duration="280000" />
+      <workItem from="1755203223641" duration="6406000" />
+      <workItem from="1755211202391" duration="1445000" />
     </task>
+    <task id="LOCAL-00001" summary="init package">
+      <option name="closed" value="true" />
+      <created>1755203605010</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755203605010</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat(data): add initial entities for new project&#10;- Created core entities to define the data structure&#10;- Sets up the foundation for data and domain layers">
+      <option name="closed" value="true" />
+      <created>1755205681366</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1755205681366</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat(data &amp; web): add repositories and TeacherLessonDetail service/controller&#10;- Added UserRepository, LessonRepository, ReviewRepository, and TeacherRepository&#10;- Implemented service and controller for TeacherLessonDetail&#10;- Sets up core data access and initial web layer for TeacherLessonDetail">
+      <option name="closed" value="true" />
+      <created>1755207607885</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1755207607885</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat(service): implement all core services&#10;- Added and implemented all service classes for project business logic&#10;- Prepares the backend for controller endpoints and functional operations">
+      <option name="closed" value="true" />
+      <created>1755207823540</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1755207823540</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat(web): implement all controllers for core functionality&#10;- Added and completed all controller classes&#10;- Connected controllers with corresponding services&#10;- Prepares the backend for API integration and testing">
+      <option name="closed" value="true" />
+      <created>1755208099376</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1755208099376</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change gitignore" />
+    <MESSAGE value="init package" />
+    <MESSAGE value="feat(data): add initial entities for new project&#10;- Created core entities to define the data structure&#10;- Sets up the foundation for data and domain layers" />
+    <MESSAGE value="feat(data &amp; web): add repositories and TeacherLessonDetail service/controller&#10;- Added UserRepository, LessonRepository, ReviewRepository, and TeacherRepository&#10;- Implemented service and controller for TeacherLessonDetail&#10;- Sets up core data access and initial web layer for TeacherLessonDetail" />
+    <MESSAGE value="feat(service): implement all core services&#10;- Added and implemented all service classes for project business logic&#10;- Prepares the backend for controller endpoints and functional operations" />
+    <MESSAGE value="feat(web): implement all controllers for core functionality&#10;- Added and completed all controller classes&#10;- Connected controllers with corresponding services&#10;- Prepares the backend for API integration and testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(web): implement all controllers for core functionality&#10;- Added and completed all controller classes&#10;- Connected controllers with corresponding services&#10;- Prepares the backend for API integration and testing" />
   </component>
 </project>

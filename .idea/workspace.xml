@@ -4,25 +4,77 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf7ee19a-09db-4383-bda5-d26f1f6162a6" name="Changes" comment="feat(web): implement all controllers for core functionality&#10;- Added and completed all controller classes&#10;- Connected controllers with corresponding services&#10;- Prepares the backend for API integration and testing">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/LessonRequestDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/LessonResponseDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/Mapper.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/ReviewRequestDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/ReviewResponseDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherLessonDetailRequestDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherLessonDetailResponseDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherRequestDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherResponseDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/UserRequestDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/UserResponseDto.kt" afterDir="false" />
+    <list default="true" id="bf7ee19a-09db-4383-bda5-d26f1f6162a6" name="Changes" comment="feat(dto &amp; mapper): add DTOs, mappers, and update User entity&#10;- Created DTOs for request/response handling&#10;- Implemented mappers between entities and DTOs&#10;- Updated User entity with necessary changes for mapping and clarity">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/config/SecurityConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/Post/Post.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/Post/PostRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/Post/Service/PostService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/Post/controller/PostController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/auth/controller/AuthController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/auth/dto/AuthResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/auth/dto/ForgetPasswordRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/auth/dto/LoginRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/auth/dto/RegisterRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/auth/dto/ResetPasswordRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/auth/service/AuthService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/lesson/Lesson.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/lesson/LessonRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/lesson/controller/LessonController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/lesson/service/LessonService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/review/Review.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/review/ReviewRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/review/controller/ReviewController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/review/service/ReviewService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/teacher/Teacher.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/teacher/TeacherRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/teacher/controller/TeacherController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/user/Role.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/user/User.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/user/UserRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/user/controller/UserController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/user/service/UserService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/security/JwtAuthFilter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/security/JwtTokenProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/util/Mapper.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/controller/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/controller/UserController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/entity/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/entity/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/repository/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/repository/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/controller/LessonController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/controller/ReviewController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/controller/TeacherController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/controller/TeacherLessonDetailController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/controller/UserController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/LessonRequestDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/lesson/dto/LessonRequestDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/LessonResponseDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/lesson/dto/LessonResponseDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/Mapper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/ReviewRequestDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/review/dto/ReviewRequestDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/ReviewResponseDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/review/dto/ReviewResponseDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherLessonDetailRequestDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/Post/dto/PostRequestDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherLessonDetailResponseDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/Post/dto/PostResponseDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherRequestDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/teacher/dto/TeacherRequestDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/TeacherResponseDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/teacher/dto/TeacherResponseDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/UserRequestDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/user/dto/UserRequestDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/dto/UserResponseDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/user/dto/UserResponseDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/entity/Lesson.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/entity/Review.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/entity/Role.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/entity/Teacher.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/entity/TeacherLessonDetail.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/model/entity/User.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/repository/LessonRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/repository/ReviewRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/repository/TeacherLessonDetailRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/repository/TeacherRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/repository/UserRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/service/LessonService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/service/ReviewService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/service/TeacherLessonDetailService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/service/TeacherService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/feature/teacher/service/TeacherService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/nus/National_University_of_Skill_Backend/service/UserService.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +106,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Interface" />
-        <option value="Kotlin Data Class" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -91,6 +143,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Gradle.Build National-University-of-Skill-Backend.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
@@ -102,7 +155,7 @@
     &quot;Spring Boot.NationalUniversityOfSkillBackendApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/lessons/devloping/Kotlin/projects/National-University-of-Skill-Backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/lessons/devloping/Kotlin/projects/National-University-of-Skill-Backend/src/main/kotlin/com/nus/National_University_of_Skill_Backend/user&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -119,6 +172,22 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\lessons\devloping\Kotlin\projects\National-University-of-Skill-Backend\src\main\kotlin\com\nus\National_University_of_Skill_Backend\user" />
+      <recent name="E:\lessons\devloping\Kotlin\projects\National-University-of-Skill-Backend\src\main\kotlin\com\nus\National_University_of_Skill_Backend\teacher" />
+      <recent name="E:\lessons\devloping\Kotlin\projects\National-University-of-Skill-Backend\src\main\kotlin\com\nus\National_University_of_Skill_Backend\review" />
+      <recent name="E:\lessons\devloping\Kotlin\projects\National-University-of-Skill-Backend\src\main\kotlin\com\nus\National_University_of_Skill_Backend\lesson" />
+      <recent name="E:\lessons\devloping\Kotlin\projects\National-University-of-Skill-Backend\src\main\kotlin\com\nus\National_University_of_Skill_Backend\auth" />
+    </key>
+    <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.nus.National_University_of_Skill_Backend.feature.Post.Service" />
+      <recent name="com.nus.National_University_of_Skill_Backend.feature.Post.controller" />
+      <recent name="com.nus.National_University_of_Skill_Backend.feature.Post.dto" />
+      <recent name="com.nus.National_University_of_Skill_Backend.feature.Post" />
+      <recent name="com.nus.National_University_of_Skill_Backend.user.service" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="NationalUniversityOfSkillBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="National-University-of-Skill-Backend.main" />
@@ -155,7 +224,9 @@
       <workItem from="1755201285218" duration="1610000" />
       <workItem from="1755202940065" duration="280000" />
       <workItem from="1755203223641" duration="6406000" />
-      <workItem from="1755211202391" duration="1445000" />
+      <workItem from="1755211202391" duration="3972000" />
+      <workItem from="1755274667701" duration="2068000" />
+      <workItem from="1755276783965" duration="6823000" />
     </task>
     <task id="LOCAL-00001" summary="init package">
       <option name="closed" value="true" />
@@ -197,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755208099376</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat(dto &amp; mapper): add DTOs, mappers, and update User entity&#10;- Created DTOs for request/response handling&#10;- Implemented mappers between entities and DTOs&#10;- Updated User entity with necessary changes for mapping and clarity">
+      <option name="closed" value="true" />
+      <created>1755212862358</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1755212862358</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +289,7 @@
     <MESSAGE value="feat(data &amp; web): add repositories and TeacherLessonDetail service/controller&#10;- Added UserRepository, LessonRepository, ReviewRepository, and TeacherRepository&#10;- Implemented service and controller for TeacherLessonDetail&#10;- Sets up core data access and initial web layer for TeacherLessonDetail" />
     <MESSAGE value="feat(service): implement all core services&#10;- Added and implemented all service classes for project business logic&#10;- Prepares the backend for controller endpoints and functional operations" />
     <MESSAGE value="feat(web): implement all controllers for core functionality&#10;- Added and completed all controller classes&#10;- Connected controllers with corresponding services&#10;- Prepares the backend for API integration and testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(web): implement all controllers for core functionality&#10;- Added and completed all controller classes&#10;- Connected controllers with corresponding services&#10;- Prepares the backend for API integration and testing" />
+    <MESSAGE value="feat(dto &amp; mapper): add DTOs, mappers, and update User entity&#10;- Created DTOs for request/response handling&#10;- Implemented mappers between entities and DTOs&#10;- Updated User entity with necessary changes for mapping and clarity" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(dto &amp; mapper): add DTOs, mappers, and update User entity&#10;- Created DTOs for request/response handling&#10;- Implemented mappers between entities and DTOs&#10;- Updated User entity with necessary changes for mapping and clarity" />
   </component>
 </project>

@@ -6,6 +6,8 @@ import com.nus.National_University_of_Skill_Backend.feature.teacher.Teacher
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
+import jakarta.persistence.EnumType
+import jakarta.persistence.Enumerated
 import jakarta.persistence.FetchType
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -14,6 +16,7 @@ import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.OneToMany
 import jakarta.persistence.Table
+import java.time.LocalDateTime
 
 @Entity
 data class Post(
@@ -50,8 +53,10 @@ data class Post(
     @Column(columnDefinition = "TEXT")
     val conclusion: String,
 
-    @Column(nullable = false)
-    var isPublished: Boolean = false,
+    @Enumerated(EnumType.STRING)
+    var status: PostStatus = PostStatus.PENDING,
+
+    val createdAt: LocalDateTime = LocalDateTime.now(),
 
     @OneToMany(mappedBy = "post", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val reviews: MutableList<Review> = mutableListOf()

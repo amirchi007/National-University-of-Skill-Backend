@@ -3,6 +3,7 @@ package com.nus.National_University_of_Skill_Backend.config
 import com.nus.National_University_of_Skill_Backend.security.JwtAuthFilter
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.http.SessionCreationPolicy
@@ -13,6 +14,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 class SecurityConfig(
     private val jwtAuthFilter: JwtAuthFilter
 ) {
@@ -22,13 +24,18 @@ class SecurityConfig(
 
     @Bean
     fun filterChain(http: HttpSecurity): SecurityFilterChain {
-        http.csrf { it.disable() }
+        http
+            .csrf { it.disable() }
+            .cors { }
             .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
             .authorizeHttpRequests {
-                it.requestMatchers("/api/auth/**").permitAll()
-                    .anyRequest().authenticated()
+                it.requestMatchers("/auth/**").permitAll()
+                it.requestMatchers("/api/admin/**").hasRole("ADMIN")
+                it.requestMatchers("/api/user/**").hasRole("USER")
+                it.anyRequest().authenticated()
             }
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter::class.java)
+
 
         return http.build()
     }

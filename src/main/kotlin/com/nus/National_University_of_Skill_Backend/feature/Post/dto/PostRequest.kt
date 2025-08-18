@@ -3,7 +3,7 @@ package com.nus.National_University_of_Skill_Backend.feature.Post.dto
 import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotNull
 
-data class PostRequestDto(
+data class PostRequest(
     @field:NotNull(message = "teacherId is required")
     val teacherId: Long,
 

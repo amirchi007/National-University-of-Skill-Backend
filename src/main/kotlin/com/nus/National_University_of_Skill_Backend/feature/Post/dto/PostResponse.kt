@@ -1,6 +1,6 @@
 package com.nus.National_University_of_Skill_Backend.feature.Post.dto
 
-data class PostResponseDto(
+data class PostResponse(
     val id: Long,
     val teacherId: Long,
     val lessonId: Long,

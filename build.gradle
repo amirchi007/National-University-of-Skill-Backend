@@ -4,6 +4,7 @@ plugins {
     id 'org.springframework.boot' version '3.4.8'
     id 'io.spring.dependency-management' version '1.1.7'
     id 'org.jetbrains.kotlin.plugin.jpa' version '1.9.25'
+    id("org.jetbrains.kotlin.plugin.allopen") version "1.9.10"
 }
 
 group = 'com.nus'
@@ -30,14 +31,22 @@ ext {
     set('tanzuScgExtensionsVersion', "1.0.0")
 }
 
+allOpen {
+    annotation("jakarta.persistence.Entity")
+    annotation("jakarta.persistence.MappedSuperclass")
+    annotation("jakarta.persistence.Embeddable")
+}
+
+
 dependencies {
+    implementation 'org.springframework:spring-context-support'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
-    implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
+    implementation("org.springframework.boot:spring-boot-starter-mail")
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'

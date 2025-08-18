@@ -8,8 +8,8 @@ import com.nus.National_University_of_Skill_Backend.feature.review.dto.ReviewReq
 import com.nus.National_University_of_Skill_Backend.feature.review.dto.ReviewResponseDto
 import com.nus.National_University_of_Skill_Backend.feature.teacher.Teacher
 import com.nus.National_University_of_Skill_Backend.feature.Post.Post
-import com.nus.National_University_of_Skill_Backend.feature.Post.dto.PostRequestDto
-import com.nus.National_University_of_Skill_Backend.feature.Post.dto.PostResponseDto
+import com.nus.National_University_of_Skill_Backend.feature.Post.dto.PostRequest
+import com.nus.National_University_of_Skill_Backend.feature.Post.dto.PostResponse
 import com.nus.National_University_of_Skill_Backend.feature.teacher.dto.TeacherRequestDto
 import com.nus.National_University_of_Skill_Backend.feature.teacher.dto.TeacherResponseDto
 import com.nus.National_University_of_Skill_Backend.feature.user.User
@@ -77,7 +77,7 @@ object Mapper {
     )
     /* ----------- TEACHER LESSON DETAIL ----------- */
     fun toPostEntity(
-        dto: PostRequestDto,
+        dto: PostRequest,
         teacher: Teacher,
         lesson: Lesson
     ) = Post(
@@ -96,7 +96,7 @@ object Mapper {
     )
 
     fun toPostResponse(entity: Post) =
-        PostResponseDto(
+        PostResponse(
             id = entity.id,
             teacherId = entity.teacher.id,
             lessonId = entity.lesson.id,

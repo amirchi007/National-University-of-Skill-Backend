@@ -1,0 +1,31 @@
+jwt:
+  secret: zdwdsr5NJSOvnJLiSjPBA6cjtJIp7HkaKpb8mXbMFeyCchjZoOf627Y4wTrm8dfjgemWa71rVd63boCjzhXHJxZWHQwmSiedftNE
+  expiration: 3600000
+
+spring:
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/nus_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: amghira1@gmail.com
+    password: Pnq)54Snb.,#$%gjr=
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

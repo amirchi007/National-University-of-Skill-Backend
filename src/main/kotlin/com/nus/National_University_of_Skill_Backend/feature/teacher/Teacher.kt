@@ -1,9 +1,12 @@
 package com.nus.National_University_of_Skill_Backend.feature.teacher
 
 import com.nus.National_University_of_Skill_Backend.feature.Post.Post
+import com.nus.National_University_of_Skill_Backend.feature.Post.PostStatus
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
+import jakarta.persistence.EnumType
+import jakarta.persistence.Enumerated
 import jakarta.persistence.FetchType
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -27,5 +30,8 @@ data class Teacher(
     val createdAt: LocalDateTime = LocalDateTime.now(),
 
     @OneToMany(mappedBy = "teacher", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val teacherLessonDetails: MutableList<Post> = mutableListOf()
+    val teacherLessonDetails: MutableList<Post> = mutableListOf(),
+
+    @Enumerated(EnumType.STRING)
+    var status: PostStatus = PostStatus.PENDING
 )

@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotNull
 
 data class ReviewRequestDto(
-    @field:NotNull("postId is required")
+//    @field:NotNull("postId is required")
     val postId: Long,
 
     @field:Min(1)

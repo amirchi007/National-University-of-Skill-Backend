@@ -5,7 +5,10 @@ import jakarta.validation.constraints.Size
 
 data class ResetPasswordRequest(
     @field:NotBlank
-    val token: String, // Token from forget password
+    val email: String, // otp that send to email
+
+    @field:NotBlank
+    val token: String, // code that get from the email
 
     @field:NotBlank
     @field:Size(min = 6, message = "Password must be at least 6 characters")
